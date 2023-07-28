@@ -3,8 +3,6 @@ const cors = require("cors");
 const Sequelize = require("sequelize");
 const config = require("./config/config.json")["development"];
 const morgan = require("morgan");
-// const { DB_PASS } = require("./config");
-// config.password = DB_PASS;
 
 const AppRouter = require("./routes/AppRouter");
 
@@ -27,7 +25,6 @@ const connectToPostgres = () => {
 };
 const postgresClient = connectToPostgres();
 config.client = postgresClient;
-// console.log(config.client);
 
 app.get("/", (req, res) => res.json({ message: "Server Works" }));
 app.use("/api", AppRouter);
