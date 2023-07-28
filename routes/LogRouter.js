@@ -4,6 +4,6 @@ const controller = require("../controllers/LogController");
 
 Router.get("/", controller.getAllLogs);
 Router.post("/", controller.createLog);
-// Router.delete("/", controller.deleteAllUsers);
+Router.delete("/", controller.deleteAllLogs);
 
 module.exports = Router;

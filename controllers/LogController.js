@@ -21,17 +21,17 @@ const createLog = async (req, res) => {
   }
 };
 
-// const deleteAllUsers = async (req, res) => {
-//   try {
-//     const deletedUsers = await User.destroy({ where: {}, truncate: true });
-//     res.send("all users deleted");
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
+const deleteAllLogs = async (req, res) => {
+  try {
+    const deletedUsers = await Log.destroy({ where: {}, truncate: true });
+    res.send("all logs deleted");
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 module.exports = {
   getAllLogs,
   createLog,
-  //   deleteAllUsers,
+  deleteAllLogs,
 };
