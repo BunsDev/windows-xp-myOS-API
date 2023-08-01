@@ -5,6 +5,6 @@ const controller = require("../controllers/TextController");
 Router.get("/", controller.getAllTexts);
 Router.post("/", controller.createText);
 Router.put("/", controller.updateText);
-Router.delete("/", controller.deleteAllTexts);
+Router.delete("/", controller.deleteText);
 
 module.exports = Router;

@@ -37,6 +37,16 @@ const updateText = async (req, res) => {
   }
 };
 
+const deleteText = async (req, res) => {
+  try {
+    console.log(req.body);
+    const deletedText = await Text.destroy({ where: { id: req.body.id } });
+    res.send(deletedText);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const deleteAllTexts = async (req, res) => {
   try {
     const deletedTexts = await Text.destroy({ where: {}, truncate: true });
@@ -51,4 +61,5 @@ module.exports = {
   createText,
   deleteAllTexts,
   updateText,
+  deleteText,
 };
